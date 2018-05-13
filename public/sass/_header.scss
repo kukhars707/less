@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    &__top {
+        background: green;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

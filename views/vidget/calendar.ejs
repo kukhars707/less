@@ -1,0 +1,21 @@
+<% if (event) { %>
+    <section class="calendar-block">
+        <h2 class="calendar-block__title">
+            Календарь
+        </h2>
+        <div class="container">
+            <div class="row">
+                <% event.forEach(function (item) { %>
+                    <div class="col-lg-3">
+                        <div class="calendar-block__item">
+                            <h4 class="calendar-block__item_title"><%= item.title %></h4>
+                            <span class="calendar-block__item_date"><%= item.date %></span>
+                            <p class="calendar-block__item_body"><%= item.body %></p>
+                            <span class="calendar-block__item_location"><%= item.location %></span>
+                        </div>
+                    </div>
+                <% }); %>
+                </div>
+            </div>
+    </section>
+<% } %>
