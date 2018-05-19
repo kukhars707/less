@@ -3,4 +3,9 @@
         text-align: center;
         text-transform: uppercase;
     }
+    &__wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }

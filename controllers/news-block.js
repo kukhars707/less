@@ -1,12 +1,28 @@
-const newsBlock = require('../models/news-block');
+const newsModel = require('../models/news-block');
 
 module.exports = {
+
+    getNews: async (req, res, next) => {
+        const news = await newsModel.find();
+
+        if(!news) {
+            return next({
+                status: 400,
+                message
+            })
+        }
+
+        res.render('index', news);
+        // res.json(news);
+
+    },
+
     addNews: async (req, res, next) => {
         const body = req.body;
         let news;
 
         try {
-            news = await newsBlock.create(body);
+            news = await newsModel.create(body);
         } catch ({ message }) {
             return next({
                 status: 400,
@@ -18,7 +34,7 @@ module.exports = {
     },
 
     deleteNews: async (req, res, next) => {
-        const article = newsBlock.findById(req.params.id);
+        const article = newsModel.findById(req.params.id);
         let oneNews; 
 
         try {
@@ -30,8 +46,6 @@ module.exports = {
             })
         }
     
-        console.log(article);
-        console.log(oneNews);
         res.json(oneNews);
     }
 };

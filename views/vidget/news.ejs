@@ -3,18 +3,14 @@
         <h2 class="news-block__title">
             Новости
         </h2>
-        <div class="container">
-            <div class="row">
-                <% news.forEach(function (item) { %>
-                    <div class="col-lg-3">
-                        <div class="news-block__item">
-                            <h4 class="news-block__item_title"><%= item.title %></h4>
-                            <span class="news-block__item_date"><%= item.date %></span>
-                            <p class="news-block__item_body"><%= item.body %></p>
-                        </div>
-                    </div>
-                <% }); %>
+        <div class="news-block__wrap">
+            <% news.forEach(function (item) { %>
+            <div class="news-block__item">
+                <h4 class="news-block__item_title"><%= item.title %></h4>
+                <span class="news-block__item_date"><%= item.date %></span>
+                <p class="news-block__item_body"><%= item.body %></p>
             </div>
+            <% }); %>
         </div>
     </section>
 <% } %>

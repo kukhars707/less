@@ -2,9 +2,21 @@
     display: flex;
     flex-direction: column;
     &__top {
-        background: green;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        background-color: $header-bg;
+        &_adress {
+            span {
+                font-size: 13px;
+            }
+        }
+        &_phone {
+            a {
+                font-size: 13px;
+                text-decoration: none;
+            }
+        }
     }
 }
