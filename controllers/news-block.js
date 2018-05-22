@@ -3,17 +3,25 @@ const newsModel = require('../models/news-block');
 module.exports = {
 
     getNews: async (req, res, next) => {
-        const news = await newsModel.find();
+        const perPage = 4;
+        const page = req.params.page;
 
-        if(!news) {
-            return next({
-                status: 400,
-                message
+        await newsModel.find().skip(perPage * page - perPage).limit(perPage).exec(function (err, post) {
+            newsModel.count().exec(function (err, count) {
+                if(err) {
+                    return next({
+                        status: 400,
+                        message
+                    })
+                }
+
+                res.render('news', {
+                    newsPage: post,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                });
             })
-        }
-
-        res.render('index', news);
-        // res.json(news);
+        });
 
     },
 
