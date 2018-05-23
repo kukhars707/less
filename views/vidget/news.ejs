@@ -1,16 +1,20 @@
 <% if (news) { %>
-    <section class="news-block">
-        <h2 class="news-block__title">
-            Новости
-        </h2>
-        <div class="news-block__wrap">
-            <% news.forEach(function (item) { %>
-            <div class="news-block__item">
-                <h4 class="news-block__item_title"><%= item.title %></h4>
-                <span class="news-block__item_date"><%= item.date %></span>
-                <p class="news-block__item_body"><%= item.body %></p>
+    <section class="news-block block">
+        <div class="container">
+            <h2 class="news-block__title">
+                Новости
+            </h2>
+            <div class="news-block__wrap">
+                <% news.forEach(function (item) { %>
+                <div class="news-block__item posts">
+                    <div class="posts__image"></div>
+                    <h4 class="posts__title"><%= item.title %></h4>
+                    <span class="posts__date"><%= item.date %></span>
+                    <p class="posts__body"><%= item.body %></p>
+                    <a href="#" class="posts__btn">Перейти</a>
+                </div>
+                <% }); %>
             </div>
-            <% }); %>
         </div>
     </section>
 <% } %>

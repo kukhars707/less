@@ -1,10 +1,11 @@
 <% if (persone) { %>
-    <section class="persone-block">
-        <h2 class="persone-block__title">
-            Персона
-        </h2>
-        <div class="persone-block__wrap">
-            <% persone.forEach(function (item) { %>
+    <div class="container">
+        <section class="persone-block block">
+            <h2 class="persone-block__title">
+                Персона
+            </h2>
+            <div class="persone-block__wrap">
+                <% persone.forEach(function (item) { %>
                 <div class="persone-block__wrap_info">
                     <h3><%= item.title %></h3>
                     <p><%= item.body %></p>
@@ -12,7 +13,8 @@
                 <div class="persone-block__wrap_image">
                     <p><%= item.image %></p>
                 </div>
-            <% }); %>
-        </div>
-    </section>
+                <% }); %>
+            </div>
+        </section>
+    </div>
 <% } %>

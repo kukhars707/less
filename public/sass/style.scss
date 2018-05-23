@@ -7,6 +7,8 @@
 @import "persone-block";
 @import "footer";
 @import "news-page";
+@import "posts-views";
+@import "slider";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic,cyrillic-ext');
 
@@ -15,7 +17,18 @@ body {
 }
 
 .padding {
-    padding: 0 15px;
+  padding: 0 15px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.block {
+    padding: 20px 0;
 }
 
 .callback-btn {

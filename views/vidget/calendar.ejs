@@ -1,17 +1,21 @@
 <% if (event) { %>
-    <section class="calendar-block">
-        <h2 class="calendar-block__title">
-            Календарь
-        </h2>
-        <div class="calendar-block__wrap">
-            <% event.forEach(function (item) { %>
-                <div class="calendar-block__item">
-                    <h4 class="calendar-block__item_title"><%= item.title %></h4>
-                    <span class="calendar-block__item_date"><%= item.date %></span>
-                    <p class="calendar-block__item_body"><%= item.body %></p>
-                    <span class="calendar-block__item_location"><%= item.location %></span>
+    <section class="calendar-block block">
+        <div class="container">
+            <h2 class="calendar-block__title">
+                Календарь
+            </h2>
+            <div class="calendar-block__wrap">
+                <% event.forEach(function (item) { %>
+                <div class="calendar-block__item posts">
+                    <div class="posts__image"></div>
+                    <h4 class="posts__title"><%= item.title %></h4>
+                    <span class="posts__date"><%= item.date %></span><br>
+                    <span class="posts__location"><%= item.location %></span>
+                    <p class="posts__body"><%= item.body %></p>
+                    <a href="#" class="posts__btn">Перейти</a>
                 </div>
-            <% }); %>
+                <% }); %>
+            </div>
         </div>
     </section>
 <% } %>

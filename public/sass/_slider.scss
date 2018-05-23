@@ -1,0 +1,26 @@
+
+.slider {
+  .slick-arrow {
+    position: absolute;
+    z-index: 2;
+  }
+  .slick-list {
+    max-height: 500px;
+  }
+  .slick-slide {
+    max-height: 100%;
+    img {
+      max-height: 100%;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .slick-next {
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}

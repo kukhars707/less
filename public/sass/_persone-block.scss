@@ -6,6 +6,12 @@
     &__wrap {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        &_info {
+            flex: 0 0 50%;
+        }
+        &_image {
+            flex: 0 0 50%;
+        }
     }
 }
