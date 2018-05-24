@@ -2,13 +2,18 @@
 <%- include('header'); -%>
 
 
-<div class="container padding">
+<div class="container">
+    <h2 class="news-block__title">
+        Новости
+    </h2>
     <div class="news">
         <% newsPage.forEach(function (item) { %>
-        <div class="news__wrap">
-            <h4 class="news__wrap_title"><%= item.title %></h4>
-            <span class="news__wrap_date"><%= item.date %></span>
-            <p class="news_wrap_body"><%= item.body %></p>
+        <div class="posts">
+            <div class="posts__image"></div>
+            <h4 class="posts__title"><%= item.title %></h4>
+            <span class="posts__date"><%= item.date %></span>
+            <p class="posts__body"><%= item.body %></p>
+            <a href="#" class="posts__btn">Перейти</a>
         </div>
         <% }); %>
     </div>

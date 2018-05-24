@@ -7,11 +7,12 @@
             <div class="persone-block__wrap">
                 <% persone.forEach(function (item) { %>
                 <div class="persone-block__wrap_info">
-                    <h3><%= item.title %></h3>
-                    <p><%= item.body %></p>
+                    <h3 class="persone-block__wrap_info-title"><%= item.title %></h3>
+                    <p class="persone-block__wrap_info-body"><%= item.body %></p>
                 </div>
                 <div class="persone-block__wrap_image">
-                    <p><%= item.image %></p>
+                    <% var img = '/image/slider/' + item.image %>
+                    <img src="<%= img %>" alt="">
                 </div>
                 <% }); %>
             </div>

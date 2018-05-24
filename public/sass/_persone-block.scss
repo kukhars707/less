@@ -9,9 +9,15 @@
         justify-content: space-between;
         &_info {
             flex: 0 0 50%;
+            &-title {
+                margin: 0;
+            }
         }
         &_image {
             flex: 0 0 50%;
+            img {
+                max-width: 100%;
+            }
         }
     }
 }
