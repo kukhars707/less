@@ -6,7 +6,7 @@ module.exports = {
         const perPage = 4;
         const page = req.params.page;
 
-        await calendar.find().skip(perPage * page - perPage).limit(perPage).exec(function (err, post) {
+        await calendar.find().sort({$natural: -1}).skip(perPage * page - perPage).limit(perPage).exec(function (err, post) {
             calendar.count().exec(function (err, count) {
                 if(err) {
                     return next({

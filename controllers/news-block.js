@@ -2,11 +2,26 @@ const newsModel = require('../models/news-block');
 
 module.exports = {
 
+    getOneNews: async (req, res, next) => {
+      const findOneNews = await newsModel.findById(req.params.id);
+
+      if (!findOneNews) {
+          return next({
+              status: 400,
+              message
+          })
+      }
+
+      console.log(findOneNews);
+      res.json(findOneNews)
+
+    },
+
     getNews: async (req, res, next) => {
         const perPage = 4;
         const page = req.params.page;
 
-        await newsModel.find().skip(perPage * page - perPage).limit(perPage).exec(function (err, post) {
+        await newsModel.find().sort({$natural: -1}).skip(perPage * page - perPage).limit(perPage).exec(function (err, post) {
             newsModel.count().exec(function (err, count) {
                 if(err) {
                     return next({
