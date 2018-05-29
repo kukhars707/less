@@ -10,11 +10,10 @@
         <% newsPage.forEach(function (item) { %>
         <div class="posts">
             <div class="posts__image"></div>
-            <p class=""><%= item.id %></p>
             <h4 class="posts__title"><%= item.title %></h4>
             <span class="posts__date"><%= item.date %></span>
             <p class="posts__body"><%= item.body %></p>
-            <a href="#" class="posts__btn">Перейти</a>
+            <a href="/article/<%= item._id %>" class="posts__btn">Перейти</a>
         </div>
         <% }); %>
     </div>
