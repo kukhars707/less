@@ -1,0 +1,13 @@
+<%- include('head') -%>
+<%- include('header'); -%>
+
+    <div class="container">
+        <article>
+            <h1><%= post.title %></h1>
+            <span><%= post.date %></span>
+            <p><%= post.location %></p>
+            <div><%= post.body%></div>
+        </article>
+    </div>
+
+<%- include('footer'); -%>

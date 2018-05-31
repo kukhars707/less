@@ -12,7 +12,7 @@
                     <span class="posts__date"><%= item.date %></span><br>
                     <span class="posts__location"><%= item.location %></span>
                     <p class="posts__body"><%= item.body %></p>
-                    <a href="#" class="posts__btn">Перейти</a>
+                    <a href="/calendar/event/<%= item._id %>" class="posts__btn">Перейти</a>
                 </div>
                 <% }); %>
             </div>

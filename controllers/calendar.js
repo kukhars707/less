@@ -2,6 +2,21 @@ const calendar = require('../models/calendar');
 
 module.exports = {
 
+    getOneEvent: async (req, res, next) => {
+        const oneEvent = await calendar.findById(req.params.id);
+
+        if(!oneEvent) {
+            return next({
+                status: 400,
+                message
+            })
+        }
+
+        res.render('calendar-post', {
+            post: oneEvent
+        })
+    },
+
     getEvent: async (req, res, next) => {
         const perPage = 4;
         const page = req.params.page;

@@ -12,8 +12,9 @@ module.exports = {
           })
       }
 
-      console.log(findOneNews);
-      res.json(findOneNews)
+        res.render('news-post', {
+            post: findOneNews
+        });
 
     },
 
